@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "8f8bf5bc9813ea5787aa02876567073f"
+name = "extensive-growth-app"
+handle = "extensive-growth-app-12"
+application_url = "https://close-deadline-noon-suite.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://close-deadline-noon-suite.trycloudflare.com/auth/callback",
+  "https://close-deadline-noon-suite.trycloudflare.com/auth/shopify/callback",
+  "https://close-deadline-noon-suite.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "pamaso.myshopify.com"
+automatically_update_urls_on_dev = true
